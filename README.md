@@ -14,6 +14,36 @@ Explore whether alternative transaction data can help predict 30-day default ris
 - SQL
 - Jupyter Notebook or Databricks
 
+## Project structure
+
+The repository currently contains only this README. The following is a suggested structure for organizing the prototype as it is developed; these files and directories are planned, not yet present.
+
+```text
+cashflow-credit-scoring/
+├── README.md
+├── requirements.txt          # Python dependencies
+├── .gitignore                # Ignore environments, caches, and local data
+├── data/
+│   ├── README.md             # Data dictionary, provenance, and access notes
+│   ├── raw/                  # Local-only source data; do not commit sensitive data
+│   └── processed/            # Generated feature tables; do not commit sensitive data
+├── notebooks/
+│   └── credit_scoring.ipynb  # End-to-end exploration, modeling, and findings
+├── src/
+│   ├── __init__.py
+│   ├── preprocessing.py      # Data validation and cleaning
+│   ├── features.py           # Transaction-level feature construction
+│   ├── train.py              # Training and validation workflow
+│   └── evaluation.py         # Metrics, plots, and feature importance
+├── sql/
+│   └── transaction_aggregates.sql  # Optional SQL-based aggregation
+├── reports/
+│   └── model_findings.md     # One-page findings and limitations
+└── tests/
+    ├── test_preprocessing.py
+    └── test_features.py
+```
+
 ## Project workflow
 
 ### 1. Feature extraction
